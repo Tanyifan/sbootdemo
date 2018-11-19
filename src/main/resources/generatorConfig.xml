@@ -60,12 +60,12 @@
             <!-- 针对 oracle 数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
-        <table tableName="student" domainObjectName="Student"
+        <table tableName="class" domainObjectName="Classes"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
-        <table tableName="studentclass" domainObjectName="StudentClass"
+        <table tableName="teacher" domainObjectName="Teacher"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
