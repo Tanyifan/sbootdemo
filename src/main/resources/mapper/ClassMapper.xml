@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.classMapper"就是me.gacl.mapping(包名)+classMapper(classMapper.xml文件去除后缀)
+ -->
+
+<mapper namespace="com.tan.sbootdemo.dao.ClassMapper">
+    <select id="getT" parameterType="int" resultMap="ClassResultMap">
+        select * from class c, teacher t where c.teacher_id=t.t_id and c.c_id=#{id}
+    </select>
+    <!-- 使用resultMap映射实体类和字段之间的一一对应关系 -->
+    <resultMap type="com.tan.sbootdemo.entity.Classes" id="ClassResultMap">
+        <id property="id" column="c_id"/>
+        <result property="name" column="c_name"/>
+        <association property="teacher" javaType="com.tan.sbootdemo.entity.Teacher">
+            <id property="id" column="t_id"/>
+            <result property="name" column="t_name"/>
+        </association>
+    </resultMap>
+</mapper>

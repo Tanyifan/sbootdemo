@@ -1,0 +1,23 @@
+#公共配置
+spring:
+  profiles:
+    active: dev
+  mvc:
+    view:
+      prefix: "/templates/"
+      suffix: ".html"
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: ".html"
+    enabled: true
+
+mybatis:
+  typeAliasesPackage: com.tan.sbootdemo.entity
+  mapperLocations: classpath:mapper/*.xml
+
+#pagehelper分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
